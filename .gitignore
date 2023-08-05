@@ -1,0 +1,11 @@
+.docker/
+postgres-data/
+*/vendor/
+*/node_modules/*
+*/dist
+*/ormconfig.json
+ormconfig.json
+respaldo/
+maketas-ui/*/
+node_modules/*
+./node_modules/*

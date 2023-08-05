@@ -1,0 +1,52 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+"""
+A date-time string at UTC, such as 2019-12-03T09:54:33Z, compliant with the date-time format.
+"""
+scalar DateTime
+
+type Item {
+  description: String!
+  id: Int!
+  itemsOrder: [ItemsOrder!]!
+  price: Float!
+  quantity: Int!
+  sku: String!
+  title: String!
+  url: String!
+}
+
+type ItemsOrder {
+  id: Int!
+  idItem: Int!
+  idOrder: Int!
+}
+
+type Order {
+  client: String!
+  createDate: DateTime!
+  id: Int!
+  itemsOrder: [ItemsOrder!]!
+  name: String!
+  shippingAddress: String!
+  shippingPromise: DateTime!
+  status: StatusOrder!
+}
+
+type Query {
+  getAllOrders(status: String!): [Order!]!
+  getItem(id: Int!): Item!
+  getItemsInOrder: [Item!]!
+  getOrder(id: Int!): Order!
+  sayHello: String!
+}
+
+"""Posibles estados de las ordenes"""
+enum StatusOrder {
+  APPROVED
+  CANCEL
+  DELIVERY
+  TRAVEL
+}
