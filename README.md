@@ -1,25 +1,30 @@
 # graphql-nestjs
 
-This proyect is a graphql using NestJs framework, implementing clean architecture (onion architecture) 
+This proyect is a graphql using NestJs framework, implementing clean architecture (onion architecture)
 in NodeJs.
-It consumes some REST API from torre.co and expose the same functionalities in the resolver   
+It consumes some postegress DB and expose some functionalities in the resolver
 
-
-<center><img src="https://graphql.org/img/logo.svg" width="400" height="400"> <img src="https://d33wubrfki0l68.cloudfront.net/e937e774cbbe23635999615ad5d7732decad182a/26072/logo-small.ede75a6b.svg" width="400" height="400"></center>
+<center><img src="https://graphql.org/img/logo.svg" width="250" height="250"> <img src="https://d33wubrfki0l68.cloudfront.net/e937e774cbbe23635999615ad5d7732decad182a/26072/logo-small.ede75a6b.svg" width="300" height="300"></center>
 
 ---
 
 ## Components
 
-1. Data layer:
+1. Service layer:
    This layer contains all classes and modules in charge of consuming data
    generally here stay services, DAO's and Repositories.
 
-2. Core layer:
-   Here entities or models and use-cases, .
+2. UseCase layer:
+   Here are the bussiness rules, and the mos important logic,
 
 3. Resolver's layer:
    Here are the resolver's and another web components, which expose the services.
+
+4. database's layer
+   Here are the Entities, models and things related with DB
+
+5. modules's layer
+   Here is just configurations files regarding NESTJS framework
 
 ---
 
@@ -42,12 +47,5 @@ For support contact jonathan.marin.c@gmail.com
 ## Stay in touch
 
 - Autor - [Jonathan Marin](https://fr.wikipedia.org/wiki/Jonathan_Mar%C3%ADn)
-- Repos:  [GitLab](https://gitlab.com/Taufiq)
-          [GitHub](https://github.com/Anceloth)
-
-
-   
-   
-   
-
-
+- Repos: [GitLab](https://gitlab.com/Taufiq)
+  [GitHub](https://github.com/Anceloth)
