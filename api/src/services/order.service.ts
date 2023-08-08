@@ -1,6 +1,6 @@
 import { Injectable, InternalServerErrorException } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
-import { StatusOrder } from 'src/database/enums.num';
+import { StatusOrder } from 'src/database/types/enums.num';
 import { Order } from 'src/database/models/order.entity';
 import { Repository } from 'typeorm';
 

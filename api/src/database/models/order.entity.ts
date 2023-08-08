@@ -4,10 +4,11 @@ import {
   CreateDateColumn,
   Entity,
   OneToMany,
+  PrimaryColumn,
   PrimaryGeneratedColumn,
   Unique,
 } from 'typeorm';
-import { StatusOrder } from '../enums.num';
+import { StatusOrder } from '../types/enums.num';
 import { Item } from './item.entity';
 import { ItemsOrder } from './itemsByOrder.entity';
 
@@ -15,9 +16,9 @@ import { ItemsOrder } from './itemsByOrder.entity';
 @ObjectType()
 @Unique(['id'])
 export class Order {
-  @Field(() => Int)
-  @PrimaryGeneratedColumn('increment')
-  id!: number;
+  @Field(() => String)
+  @PrimaryColumn({ unique: true })
+  id!: string;
 
   @Field()
   @CreateDateColumn({ type: 'timestamp', name: 'create_date' })
@@ -32,11 +33,7 @@ export class Order {
   client!: string;
 
   @Field(() => String)
-  @Column({ type: 'varchar', length: 50 })
-  name!: string;
-
-  @Field(() => String)
-  @Column({ type: 'varchar', length: 250 })
+  @Column({ type: 'varchar', length: 250, name: 'shipping_address' })
   shippingAddress!: string;
 
   @Field()

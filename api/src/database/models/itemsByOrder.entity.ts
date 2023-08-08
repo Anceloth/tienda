@@ -17,19 +17,19 @@ export class ItemsOrder {
   @PrimaryGeneratedColumn('increment')
   id!: number;
 
-  @Field(() => Int)
-  @Column({ type: 'smallint' })
+  @Field(() => String)
+  @Column({ type: 'varchar', name: 'id_order' })
   @ManyToOne(
     () => Order,
     order => order.itemsOrder,
   )
-  idOrder: number;
+  idOrder: string;
 
-  @Field(() => Int)
-  @Column({ type: 'smallint' })
+  @Field(() => String)
+  @Column({ type: 'varchar', name: 'id_item' })
   @ManyToOne(
     () => Item,
     item => item.itemsOrder,
   )
-  idItem: number;
+  idItem: string;
 }

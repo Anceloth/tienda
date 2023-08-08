@@ -1,7 +1,7 @@
 import { Inject, Logger } from '@nestjs/common';
 import { Args, Int, Query, Resolver } from '@nestjs/graphql';
 import { WINSTON_MODULE_PROVIDER } from 'nest-winston';
-import { StatusOrder } from 'src/database/enums.num';
+import { StatusOrder } from 'src/database/types/enums.num';
 import { Order as OrderType } from 'src/database/models/order.entity';
 import { OrderUseCase } from 'src/useCases/order.usecase';
 
@@ -31,7 +31,7 @@ export class OrderResolver {
   }
 
   @Query(() => [OrderType])
-  async getAllOrders(
+  async getOrdersList(
     @Args('status') status?: StatusOrder,
   ): Promise<OrderType[]> {
     try {

@@ -9,7 +9,7 @@ scalar DateTime
 
 type Item {
   description: String!
-  id: Int!
+  id: String!
   itemsOrder: [ItemsOrder!]!
   price: Float!
   quantity: Int!
@@ -20,26 +20,25 @@ type Item {
 
 type ItemsOrder {
   id: Int!
-  idItem: Int!
-  idOrder: Int!
+  idItem: String!
+  idOrder: String!
 }
 
 type Order {
   client: String!
   createDate: DateTime!
-  id: Int!
+  id: String!
   itemsOrder: [ItemsOrder!]!
-  name: String!
   shippingAddress: String!
   shippingPromise: DateTime!
   status: StatusOrder!
 }
 
 type Query {
-  getAllOrders(status: String!): [Order!]!
   getItem(id: Int!): Item!
   getItemsInOrder: [Item!]!
   getOrder(id: Int!): Order!
+  getOrdersList(status: String!): [Order!]!
   sayHello: String!
 }
 

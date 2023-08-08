@@ -3,6 +3,7 @@ import {
   Column,
   Entity,
   OneToMany,
+  PrimaryColumn,
   PrimaryGeneratedColumn,
   Unique,
 } from 'typeorm';
@@ -12,12 +13,12 @@ import { ItemsOrder } from './itemsByOrder.entity';
 @ObjectType()
 @Unique(['id'])
 export class Item {
-  @Field(() => Int)
-  @PrimaryGeneratedColumn('increment')
-  id!: number;
+  @Field(() => String)
+  @PrimaryColumn({unique: true})
+  id!: string;
 
   @Field(() => String)
-  @Column({ type: 'varchar', length: 50 })
+  @Column({ type: 'varchar', length: 50, unique: true })
   sku!: string;
 
   @Field(() => String)

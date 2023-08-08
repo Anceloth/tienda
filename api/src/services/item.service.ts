@@ -35,7 +35,7 @@ export class ItemService {
     }
   }
 
-  async getAllItemsByOrder(idItems: number[]): Promise<Item[]> {
+  async getAllItemsByOrder(idItems: string[]): Promise<Item[]> {
     try {
       return await this._itemRepository.find({
         where: { id: In(idItems) },

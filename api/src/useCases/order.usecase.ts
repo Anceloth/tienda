@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import { StatusOrder } from 'src/database/enums.num';
+import { StatusOrder } from 'src/database/types/enums.num';
 import { Order } from 'src/database/models/order.entity';
 import { OrderService } from 'src/services/order.service';
 
@@ -12,9 +12,11 @@ export class OrderUseCase {
   }
 
   async getOrderList(status: StatusOrder): Promise<Order[]> {
+    console.log('Status: ', status);
+
     const orders: Order[] = status
-      ? await this._orderService.getAllOrders()
-      : await this._orderService.getOrdersByStatus(status);
+      ? await this._orderService.getOrdersByStatus(status)
+      : await this._orderService.getAllOrders();
 
     return orders;
   }
