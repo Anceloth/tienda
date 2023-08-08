@@ -32,11 +32,19 @@ It consumes some postegress DB and expose some functionalities in the resolver
 
 1. To start postgres container, execute in ./
 
-   npm run docker:init
+   `npm run docker:init` or `docker-compose up -d`
 
-2. To run Graphql API, execute in ./api/
+2. cd to ./api folder, and install dependencies
 
-   npm run start:dev
+   `npm install`
+
+3. To run Graphql API, execute in ./api/
+
+   `npm run start:dev`
+
+4. To load database, cd ../scripts
+
+   execute data.sql
 
 ---
 
