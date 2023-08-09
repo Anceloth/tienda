@@ -36,7 +36,7 @@ type Order {
 
 type Query {
   getItem(id: Int!): Item!
-  getItemsInOrder: [Item!]!
+  getItemsInOrder(order: String!): [Item!]!
   getOrder(id: Int!): Order!
   getOrdersList(status: String!): [Order!]!
   sayHello: String!

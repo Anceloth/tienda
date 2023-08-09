@@ -26,7 +26,9 @@ export class ItemResolver {
   }
 
   @Query(() => [ItemType])
-  async getItemsInOrder(order: InputOrderType): Promise<ItemType[]> {
+  async getItemsInOrder(
+    @Args('order', { type: () => String }) order: string,
+  ): Promise<ItemType[]> {
     try {
       console.info('Getting items by Order id:', order);
       return await this._itemUseCases.getAllItemsByOrder(order);

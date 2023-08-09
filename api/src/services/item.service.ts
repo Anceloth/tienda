@@ -24,7 +24,7 @@ export class ItemService {
     }
   }
 
-  async getItemsGroup(order: number): Promise<ItemsOrder[]> {
+  async getItemsGroup(order: string): Promise<ItemsOrder[]> {
     try {
       return await this._itemsOrderRepository.find({
         where: { idOrder: order },

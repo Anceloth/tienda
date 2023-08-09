@@ -12,8 +12,10 @@ export class ItemUseCase {
     return await this._itemService.get(id);
   }
 
-  async getAllItemsByOrder(order: InputOrderType): Promise<Item[]> {
-    const itemListFromOrder = order.itemsOrder.map(
+  async getAllItemsByOrder(order: string): Promise<Item[]> {
+
+    const orderItems = await this._itemService.getItemsGroup(order);
+    const itemListFromOrder = orderItems.map(
       itemOrder => itemOrder.idItem,
     );
     return await this._itemService.getAllItemsByOrder(itemListFromOrder);
